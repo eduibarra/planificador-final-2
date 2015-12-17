@@ -58,7 +58,7 @@ $fecha = date('Y-m-d');
 
                         <td class="text-center <?php echo $estadoTarea; ?>"><a href = "form_editar_tarea.php?tra_id=<?php echo $fila['tra_id']; ?>"><span class="btn btn-primary glyphicon glyphicon-pencil iconos text-center" title="edita tarea"></span></a></td>
                         <td class="text-center <?php echo $estadoTarea; ?>"><a href="form_eliminar_tarea.php?tra_id=<?php echo $fila['tra_id']; ?>" ><span class="btn btn-primary glyphicon glyphicon-trash iconos" title="eliminar tarea"></span></a></td>
-                        <td class="text-center <?php echo $estadoTarea; ?>"><a href="lista_de_usuarios.php?tra_id=<?php echo $fila['tra_id']; ?>"><span class="btn btn-primary glyphicon glyphicon-share" title="Compartir tarea"></span></a></td>
+                        <td class="text-center <?php echo $estadoTarea; ?>"><a href="lista_de_usuarios.php?tra_id=<?php echo $fila['tra_id']; ?>"><span class="btn btn-primary glyphicon glyphicon-share-alt" title="Compartir tarea"></span></a></td>
                         <td class="text-center <?php echo $estadoTarea; ?>"><a href="confirmar_tarea.php?tra_id=<?php echo $fila['tra_id']; ?>"><span class="btn btn-primary glyphicon glyphicon-ok" title="Confirmar tarea realizada"></span></a></td>
                     </tr>
                 <?php } ?>

@@ -43,19 +43,22 @@ $fecha = date('Y-m-d');
                     ?>
                     <tr>
                         <?php
-
                         $colorEstadoVigente = "alert-info";
                         $colorEstadoVencido = "alert-vencido";
 
-                        if ($fila['tra_fecha_fin'] < $fecha) {
+                        if ($fila['tra_fecha_fin'] > $fecha) {
                             $estadoTarea = "";
+                            $deshabilitar = "";
                         }
-                         elseif($fila['tra_fecha_fin']> $fecha) {
+                         elseif($fila['tra_fecha_fin'] < $fecha) {
                              $estadoTarea = $colorEstadoVencido;
+                             $deshabilitar = "disabled";
                          }
                         else {
                             $estadoTarea = $colorEstadoVigente;
+                            $deshabilitar = "";
                         }
+
                         ?>
                         <td class = "<?php echo $estadoTarea ; ?>"><?php echo $fila['tra_titulo']; ?></td>
                         <td class = "<?php echo $estadoTarea; ?>"><?php echo $fila['tra_descripcion']; ?></td>
@@ -63,8 +66,8 @@ $fecha = date('Y-m-d');
 
                         <td class="text-center <?php echo $estadoTarea; ?>"><a href = "form_editar_tarea.php?tra_id=<?php echo $fila['tra_id']; ?>"><span class="btn btn-primary glyphicon glyphicon-pencil iconos text-center" title="edita tarea"></span></a></td>
                         <td class="text-center <?php echo $estadoTarea; ?>"><a href="form_eliminar_tarea.php?tra_id=<?php echo $fila['tra_id']; ?>" ><span class="btn btn-primary glyphicon glyphicon-trash iconos" title="eliminar tarea"></span></a></td>
-                        <td class="text-center <?php echo $estadoTarea; ?>"><a href="lista_de_usuarios.php?tra_id=<?php echo $fila['tra_id']; ?>"><span class="btn btn-primary glyphicon glyphicon-share-alt" title="Compartir tarea"></span></a></td>
-                        <td class="text-center <?php echo $estadoTarea; ?>"><a href="confirmar_tarea.php?tra_id=<?php echo $fila['tra_id']; ?>"><span class="btn btn-primary glyphicon glyphicon-ok" title="Confirmar tarea realizada"></span></a></td>
+                        <td class="text-center <?php echo $estadoTarea; ?>"><a href="lista_de_usuarios.php?tra_id=<?php echo $fila['tra_id']; ?>"><span class="btn btn-primary glyphicon glyphicon-share-alt" title="Compartir tarea" <?php echo $deshabilitar; ?>></span></a></td>
+                        <td class="text-center <?php echo $estadoTarea; ?>"><a href="confirmar_tarea.php?tra_id=<?php echo $fila['tra_id']; ?>"><span class="btn btn-primary glyphicon glyphicon-ok" title="Confirmar tarea realizada" <?php echo $deshabilitar; ?>></span></a></td>
                     </tr>
                 <?php } ?>
                 </tbody>

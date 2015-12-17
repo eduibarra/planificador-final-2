@@ -26,8 +26,8 @@
    text-align: center;
 }
 
-.colorEstadoVencido{
-   color: #8f3f38;
+.alert-vencido{
+   color: #ffffff;
    background-color: #f7a7a3;
    border-color: #f1cfea;
    background-color: #c9302c;

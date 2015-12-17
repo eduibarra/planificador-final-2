@@ -47,12 +47,13 @@ $fecha = date('Y-m-d');
                         $colorEstadoVigente = "alert-info";
                         $colorEstadoVencido = "alert-vencido";
 
-                        if ($fila['tra_fecha_fin'] > $fecha){
-                            $estadoTarea="";
-                        } else {
-                            if($fila['tra_fecha_fin']< $fecha){
-                                $estadoTarea = $colorEstadoVencido;
-                            }
+                        if ($fila['tra_fecha_fin'] < $fecha) {
+                            $estadoTarea = "";
+                        }
+                         elseif($fila['tra_fecha_fin']> $fecha) {
+                             $estadoTarea = $colorEstadoVencido;
+                         }
+                        else {
                             $estadoTarea = $colorEstadoVigente;
                         }
                         ?>
